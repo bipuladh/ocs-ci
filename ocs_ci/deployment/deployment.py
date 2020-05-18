@@ -486,7 +486,8 @@ class Deployment(object):
         live_deploy = '1' if config.DEPLOYMENT.get('live_deployment') else '0'
         env_vars = {
             "OCS_LIVE": live_deploy,
-            "TEST_PLATFORM": "OCS"
+            "TEST_PLATFORM": "OCS",
+            "VERSION": "OCP_4.4",
         }
         ocp_console.run_openshift_console(
             suite="ceph-storage-install", env_vars=env_vars,
